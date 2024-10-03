@@ -21,7 +21,7 @@ const TermsAndConditionSection = () => (
             please refrain from using our Site.
           </p>
           {/* Introduction */}
-          <h3 className="text-[32px] text-[#191C23]">1. Introduction</h3>
+          <h3 className="text-[32px] text-[#191C23]">Introduction</h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-10">
             Bluetelecast specializes in affordable and high-quality custom
             software development. Our diverse team collaborates with companies
@@ -30,7 +30,7 @@ const TermsAndConditionSection = () => (
           </p>
           {/* 2. Intellectual Property Rights */}
           <h3 className="text-[32px] text-[#191C23] pt-[40px]">
-            2. Acceptance of Terms
+            Acceptance of Terms
           </h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-10">
             By using our Site, you acknowledge that you have read, understood,
@@ -39,7 +39,7 @@ const TermsAndConditionSection = () => (
 
           {/* 3. Restrictions */}
           <h3 className="text-[32px] text-[#191C23] pt-[40px]">
-            3. Modifications to Terms
+            Modifications to Terms
           </h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-10">
             We reserve the right to modify these Terms at any time. Changes will
@@ -48,7 +48,7 @@ const TermsAndConditionSection = () => (
             Terms.
           </p>
           {/* 4. Your Privacy */}
-          <h3 className="text-[32px] text-[#191C23]">4.Services Offered</h3>
+          <h3 className="text-[32px] text-[#191C23]">Services Offered</h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px]">
             Bluetelecast provides a range of software development services,
             including but not limited to: <br />
@@ -73,7 +73,7 @@ const TermsAndConditionSection = () => (
           </p>
 
           {/* 5. No warranties */}
-          <h3 className="text-[32px] text-[#191C23]">5. Client Obligations</h3>
+          <h3 className="text-[32px] text-[#191C23]">Client Obligations</h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-10">
             Clients are responsible for providing accurate and complete
             information necessary for project execution. Any delays due to
@@ -82,7 +82,7 @@ const TermsAndConditionSection = () => (
           </p>
           {/* 6. Limitation of liability */}
           <h3 className="text-[32px] text-[#191C23]">
-            6. Intellectual Property Rights
+            Intellectual Property Rights
           </h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-[40px]">
             All content, features, and functionality on the Site, including
@@ -92,7 +92,7 @@ const TermsAndConditionSection = () => (
             express written permission from us.
           </p>
           {/* ----------- */}
-          <h3 className="text-[32px] text-[#191C23]">7. Confidentiality</h3>
+          <h3 className="text-[32px] text-[#191C23]">Confidentiality</h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-[40px]">
             Both parties agree to maintain the confidentiality of proprietary
             information exchanged during the project. This obligation extends
@@ -100,7 +100,7 @@ const TermsAndConditionSection = () => (
           </p>
           {/* ----------- */}
           <h3 className="text-[32px] text-[#191C23]">
-            8. Limitation of Liability
+            Limitation of Liability
           </h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-[40px]">
             To the fullest extent permitted by law, Bluetelecast shall not be
@@ -111,7 +111,7 @@ const TermsAndConditionSection = () => (
           </p>
           {/* ----------- */}
           <h3 className="text-[32px] text-[#191C23]">
-            9. Disclaimer of Warranties
+            Disclaimer of Warranties
           </h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-[40px]">
             Our Site and services are provided on an "as is" and "as available"
@@ -120,7 +120,7 @@ const TermsAndConditionSection = () => (
             services.
           </p>
           {/* ----------- */}
-          <h3 className="text-[32px] text-[#191C23]">10. Indemnification</h3>
+          <h3 className="text-[32px] text-[#191C23]">Indemnification</h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-[40px]">
             You agree to indemnify and hold harmless Bluetelecast and its
             affiliates from any claims, damages, or losses arising from your use
@@ -128,14 +128,14 @@ const TermsAndConditionSection = () => (
             Terms or infringements of third-party rights.
           </p>
           {/* ----------- */}
-          <h3 className="text-[32px] text-[#191C23]">11. Governing Law</h3>
+          <h3 className="text-[32px] text-[#191C23]">Governing Law</h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-[40px]">
             These Terms shall be governed by and construed in accordance with
             the laws of Connecticut US without regard to its conflict of law
             principles.
           </p>
           {/* ----------- */}
-          <h3 className="text-[32px] text-[#191C23]">12.Severability</h3>
+          <h3 className="text-[32px] text-[#191C23]">Severability</h3>
           <p className="text-[18px]  max-w-[850px] pt-[20px] pb-[40px]">
             If any provision of these Terms is found to be unenforceable, the
             remaining provisions will continue to be valid and enforceable.
