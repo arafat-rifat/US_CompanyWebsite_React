@@ -1,0 +1,60 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "jest": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["react", "react-hooks", "react-refresh"],
+  "rules": {
+    "react/jsx-no-target-blank": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "react/button-has-type": "off",
+    "react/require-default-props": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/vite.config.js", // Add this line to allow vite.config.js in devDependencies
+          "**/*.config.js", // Include other config files if needed
+          "**/*.config.*.js" // Include other config files if needed
+        ]
+      }
+    ],
+    "no-shadow": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ],
+    "no-param-reassign": ["error", { "props": false }]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*Slice.js"],
+      "rules": {
+        "no-param-reassign": "error"
+      }
+    }
+  ],
+  "ignorePatterns": ["dist/", ".eslintrc.cjs"]
+}
