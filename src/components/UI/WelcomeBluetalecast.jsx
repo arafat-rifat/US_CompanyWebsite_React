@@ -12,7 +12,7 @@ const WelcomeBluetalecast = ({ title1, title2 }) => (
               <p className="text-[#666666] font-light text-[18px] laptop:text-[24px]">
                 /Bluetelecast
               </p>
-              <h3 className="text-[#FFFFFF] text-[24px] laptop:text-[52px] font-thin  max-w-[353px] desktop:max-w-[760px]">
+              <h3 className="text-[#FFFFFF] text-[24px] laptop:text-[52px] font-thin  max-w-[353px] laptop:max-w-[680px] desktop:max-w-[760px]">
                 <span className="text-[#8F969D]">{title1} &nbsp;</span>
                 {title2}
               </h3>
