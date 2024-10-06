@@ -27,15 +27,19 @@ const FaqSection = () => (
                 </h3>
               </div>
               {/* button */}
+              {/* button */}
               <div className="flex flex-col-reverse px-[56px] desktop:px-0 pt-[30px] laptop:pt-0">
-                <Link to="/contact">
+                <a
+                  href="https://calendly.com/fmomand-bluetelecast/30min?back=1&month=2024-10"
+                  target="_blank"
+                >
                   <Button className="flex gap-[12px] rounded-[30px] py-[14px] px-[25px] text-[24px] font-light bg-[#FFFFFF]">
                     Book an intro call
                     <span>
                       <img src={ArrowRight} alt="right arrow" />
                     </span>
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </RevealOnScroll>
