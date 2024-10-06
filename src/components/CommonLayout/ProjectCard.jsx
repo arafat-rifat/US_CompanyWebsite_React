@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import RevealOnScroll from "./RevealOnScroll";
 import ArrowRightWhite from "../../assets/Arrow - Right white.png";
 
+const handleLinkClick = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Enables smooth scrolling
+  });
+};
+
 const ProjectCard = ({ project }) => (
   <RevealOnScroll>
     <div className="grid grid-cols-1 laptop:grid-cols-2 gap-[40px] laptop:gap-[158px]  border-b border-[#8F969D] pb-6 laptop:pb-[50px] px-[20px] laptop:px-0">
@@ -15,7 +22,7 @@ const ProjectCard = ({ project }) => (
 
         {/* Button */}
         <Link to={`/caseStudy/${project.id}`}>
-          <div className="flex ">
+          <div className="flex " onClick={handleLinkClick}>
             <button className="rounded-[34px] px-[21px] laptop:px-[32px] py-3 laptop:py-[15px] border border-[#191C23] text-base laptop:text-[24px]">
               View Project
             </button>
