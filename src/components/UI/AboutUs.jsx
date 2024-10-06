@@ -51,7 +51,7 @@ const AboutUs = ({ title, src, srcResponsive }) => (
             {/* Why do we choose bluetalecast */}
             <div className="flex flex-col order-1 laptop:order-2">
               <p className="text-2xl font-light text-[#8F969D] mb-[25px]">
-                /About Us
+                /Bluetelecast
               </p>
               <h1 className="font-thin text-[56px] laptop:text-[70px] desktop:text-[112px] leading-[64px] laptop:leading-[122px] text-[#00040D] max-w-[324px] laptop:max-w-[648px]">
                 Why <span className="text-[#8F969D]">Choose</span>
