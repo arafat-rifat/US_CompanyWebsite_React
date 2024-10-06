@@ -22,7 +22,7 @@ const RevealOnScroll = ({ children }) => {
   }, []);
 
   const classes = `transition-opacity duration-1000 
-        ${isVisible ? "opacity-100" : "opacity-0"}`;
+        ${isVisible ? "hidden" : "block"}`;
 
   return (
     <div ref={ref} className={classes}>
