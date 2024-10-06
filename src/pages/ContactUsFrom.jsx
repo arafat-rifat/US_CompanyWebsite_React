@@ -4,7 +4,7 @@ import { useState } from "react";
 import ArrowRightWhite from "../assets/Arrow - Right white.png";
 
 const ContactUsForm = () => {
-  const [selectedService, setSelectedService] = useState(null); // Track selected service
+  const [selectedServices, setSelectedServices] = useState([]); // Track selected services
 
   // Services array
   const services = [
@@ -16,27 +16,33 @@ const ContactUsForm = () => {
     "IT Consulting",
   ];
 
-  // Handle button click and set selected service
+  // Handle button click to toggle selection of service
   const handleSelect = (service) => {
-    setSelectedService(service);
+    if (selectedServices.includes(service)) {
+      setSelectedServices(
+        selectedServices.filter((selected) => selected !== service)
+      );
+    } else {
+      setSelectedServices([...selectedServices, service]);
+    }
   };
 
   return (
     <section className="bg-[#E8F0F9]">
       <Container>
         {/* Main div */}
-        <div className=" py-0 laptop:py-[87px] px-0 laptop:px-8 desktop:px-0">
+        <div className="py-0 laptop:py-[87px] px-0 laptop:px-8 desktop:px-0">
           <div className="pt-[50px] laptop:pt-[121px] pb-[94px] bg-[#FFFFFF] rounded-3xl flex flex-col items-center">
             {/* Heading and Button */}
             <div className="max-w-[861px] border-b border-[#8F969D] pb-[40px] px-[20px] laptop:px-0">
-              <p className="font-normal text-[14px] laptop:text-3xl text-[#191C23]  max-w-[351px] desktop:max-w-[860px] pt-8">
+              <p className="font-normal text-[14px] laptop:text-3xl text-[#191C23] max-w-[351px] desktop:max-w-[860px] pt-8">
                 We’d love to hear from you! Whether you have a question or need
                 assistance, feel free to reach out. Contact us using the form
                 below or give us a call, and we'll get back to you as soon as
                 possible.
               </p>
               <p className="text-[#191C23] text-2xl pt-[57px] pb-[31px]">
-                /Services your looking for
+                /Services you're looking for
               </p>
               {/* Service Selection Buttons */}
               <div className="flex flex-wrap items-start gap-2">
@@ -46,7 +52,7 @@ const ContactUsForm = () => {
                     onClick={() => handleSelect(service)}
                     className={`px-[15px] laptop:px-[32px] py-[7px] laptop:py-[15px] text-lg laptop:text-2xl font-light rounded-[34px]
                       ${
-                        selectedService === service
+                        selectedServices.includes(service)
                           ? "text-[#FFFFFF] bg-[#191C23]" // Selected state styles
                           : "text-[#191C23] bg-[#F3F7FC] hover:text-[#FFFFFF] hover:bg-[#191C23]" // Default styles
                       }`}
