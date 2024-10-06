@@ -1,5 +1,13 @@
 import PropTypes from "prop-types";
 import ArrowRight from "../../assets/Arrow - Right 3.png";
+import { Link } from "react-router-dom";
+
+const handleLinkClick = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Enables smooth scrolling
+  });
+};
 
 const CrmCart = ({ bg }) => (
   <div
@@ -17,12 +25,14 @@ const CrmCart = ({ bg }) => (
       </div>
 
       {/* This is For Button */}
-      <div>
-        <button className="px-[6px] laptop:px-[25px] py-[3px] laptop:py-[14px] rounded-[30px] flex gap-[16px] bg-[#FFFFFF] items-center text-[6px] laptop:text-[24px]">
-          View{" "}
-          <img src={ArrowRight} alt="arrow" className="hidden laptop:block" />
-        </button>
-      </div>
+      <Link to="/services">
+        <div onClick={handleLinkClick}>
+          <button className="px-[6px] laptop:px-[25px] py-[3px] laptop:py-[14px] rounded-[30px] flex gap-[16px] bg-[#FFFFFF] items-center text-[6px] laptop:text-[24px]">
+            View{" "}
+            <img src={ArrowRight} alt="arrow" className="hidden laptop:block" />
+          </button>
+        </div>
+      </Link>
     </div>
   </div>
 );
