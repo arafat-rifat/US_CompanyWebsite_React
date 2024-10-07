@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../CommonLayout/Button";
+import ArrowRight from "../../assets/Arrow - Right white.png";
 
 const JobApplicationForm = ({ jobId, position, jobTitle }) => {
   const [formData, setFormData] = useState({
@@ -166,7 +167,7 @@ const JobApplicationForm = ({ jobId, position, jobTitle }) => {
               className="rounded-[30px] text-2xl px-[27px] py-[13px] bg-[#191C23] hidden laptop:block"
               type="submit"
             >
-              <img src="/src/assets/Arrow - Right white.png" />
+              <img src={ArrowRight} alt="img" />
             </Button>
           </div>
         </div>
