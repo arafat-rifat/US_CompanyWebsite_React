@@ -51,7 +51,7 @@ const CareerJobModal = ({ openModal, closeModal, jobDetails }) => {
             </ul>
           </div>
           {/* Job Responsibilities */}
-          <div className="pt-6 laptop:pt-[48px] pb-5 laptop:pb-[40px] flex flex-col justify-start">
+          <div className="pt-6 laptop:pt-[48px] pb-5 laptop:pb-[40px] flex flex-col justify-start border-b border-black">
             <h3 className=" font-medium text-lg laptop:text-[32px] leading-4 laptop:leading-8 text-[#191C23]">
               Job responsibilities
             </h3>
