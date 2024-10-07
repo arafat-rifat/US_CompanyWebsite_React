@@ -36,7 +36,7 @@ const MoreProjectSection = () => (
         {/* Main div */}
         <div className="px-[20px] desktop:px-0">
           {/* Heading */}
-          <div className="flex justify-between items-center pt-[100px] pb-[60px]">
+          <div className="flex flex-col laptop:flex-row justify-between items-start gap-8 laptop:gap-0 laptop:items-center pt-12 laptop:pt-[100px]  pb-7 laptop:pb-[60px]">
             <h1 className="text-[#191C23]  text-[32px] laptop:text-[112px]  leading-9 laptop:leading-[122px]">
               <span className="text-[#8F969D]">More</span>
               <br /> Projects
