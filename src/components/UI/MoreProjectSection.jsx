@@ -51,7 +51,7 @@ const MoreProjectSection = () => (
 
           {/* More Project Cart */}
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 tab:grid-cols-2 gap-4">
             {projects.map((project) => (
               <MoreProjectCart key={project.id} project={project} />
             ))}
