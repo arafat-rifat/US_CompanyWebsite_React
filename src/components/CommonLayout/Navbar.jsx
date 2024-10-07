@@ -1,73 +1,51 @@
+import PropTypes from "prop-types";
+import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
-import Container from "./Container";
-import Flex from "./Flex";
-import MobileMenu from "./MobileMenu";
-import logo from "../../assets/logo.png";
 
-function Navbar() {
-  const [isShow, setIsShow] = useState(false);
+const MobileMenu = ({ isShow, handleOpen }) => (
+  <nav
+    className={`min-h-screen bg-[#00040D] fixed inset-0 ${
+      isShow ? "translate-x-0" : "-translate-x-full"
+    } transition-all duration-700`}
+  >
+    <div className="flex items-center justify-between px-[20px]">
+      <h3 className="pt-4 text-[24px] font-semibold text-[#E8F0F9]">MENU</h3>
+      <button
+        className="absolute right-5 top-5 z-20 text-[24px] font-semibold text-[#E8F0F9]"
+        onClick={handleOpen}
+        aria-label="Close menu"
+      >
+        <RxCross1 />
+      </button>
+    </div>
+    <div className="pt-16 pb-16">
+      <ul className="flex flex-col items-center justify-center gap-5 text-[24px] font-semibold text-[#E8F0F9]">
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/About">About</Link>
+        </li>
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/Career">Career</Link>
+        </li>
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/Project">Project</Link>
+        </li>
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/caseStudy">Cases</Link>
+        </li>
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/contact">Contact Us</Link>
+        </li>
+      </ul>
+    </div>
+  </nav>
+);
 
-  const handleOpen = () => {
-    setIsShow((prevIsShow) => !prevIsShow);
-  };
+MobileMenu.propTypes = {
+  isShow: PropTypes.bool.isRequired,
+  handleOpen: PropTypes.func.isRequired,
+};
 
-  return (
-    <>
-      <section>
-        <Container>
-          <Flex className="flex laptop:flex-wrap justify-between items-center py-[30px] border-b-[1px] border-b-[#FFFFFF] px-[20px] desktop:px-0">
-            {/* Logo */}
-            <div>
-              <Link to="/">
-                <img src={logo} alt="logo" />
-              </Link>
-            </div>
-
-            {/* For Navigation Menu */}
-            <div>
-              <Flex className="hidden laptop:flex desktop:flex justify-between gap-[40px] laptop:gap-[25px]">
-                <ul className="flex items-center gap-[24px] text-[16px] text-[#FFFFFF] font-normal">
-                  <li>
-                    <Link to="/about">About</Link>
-                  </li>
-                  <li>
-                    <Link to="/services">Services</Link>
-                  </li>
-                  <li>
-                    <Link to="/caseStudy">Cases</Link>
-                  </li>
-                  <li>
-                    <Link to="/Career">Career</Link>
-                  </li>
-                  <li>
-                    <Link to="/project">Project</Link>
-                  </li>
-                </ul>
-
-                <Link to="/contact">
-                  <button className="py-3 px-6 border border-[#FFFFFF] rounded-[22px] text-[#FFFFFF]">
-                    Contact us
-                    <span className="ml-[14px]">&rarr;</span>
-                  </button>
-                </Link>
-              </Flex>
-              <GiHamburgerMenu
-                onClick={handleOpen}
-                className="text-4xl text-[#FFFFFF] desktop:hidden laptop:hidden"
-              />
-            </div>
-          </Flex>
-        </Container>
-      </section>
-      <MobileMenu
-        isShow={isShow}
-        setIsShow={setIsShow}
-        handleOpen={handleOpen}
-      />
-    </>
-  );
-}
-
-export default Navbar;
+export default MobileMenu;
