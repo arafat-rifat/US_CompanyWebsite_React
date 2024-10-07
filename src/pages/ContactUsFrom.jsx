@@ -35,7 +35,7 @@ const ContactUsForm = () => {
           <div className="pt-[50px] laptop:pt-[121px] pb-[94px] bg-[#FFFFFF] rounded-3xl flex flex-col items-center">
             {/* Heading and Button */}
             <div className="max-w-[861px] border-b border-[#8F969D] pb-[40px] px-[20px] laptop:px-0">
-              <p className="font-normal text-[14px] laptop:text-3xl text-[#191C23] max-w-[351px] desktop:max-w-[860px] pt-8">
+              <p className="font-normal text-[14px] laptop:text-3xl text-[#191C23] max-w-[351px] tab:max-w-[860px] pt-8">
                 We’d love to hear from you! Whether you have a question or need
                 assistance, feel free to reach out. Contact us using the form
                 below or give us a call, and we'll get back to you as soon as
