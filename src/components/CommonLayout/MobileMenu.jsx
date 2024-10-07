@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
-import { RxCross1 } from 'react-icons/rx';
-import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { RxCross1 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 const MobileMenu = ({ isShow, handleOpen }) => (
   <nav
     className={`min-h-screen bg-[#00040D] fixed inset-0 ${
-      isShow ? 'translate-x-0' : '-translate-x-full'
+      isShow ? "translate-x-0" : "-translate-x-full"
     } transition-all duration-700`}
   >
     <div className="flex items-center justify-between px-[20px]">
@@ -31,6 +31,12 @@ const MobileMenu = ({ isShow, handleOpen }) => (
         </li>
         <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
           <Link to="/Project">Project</Link>
+        </li>
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/caseStudy">Cases</Link>
+        </li>
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/contact">Contact Us</Link>
         </li>
       </ul>
     </div>

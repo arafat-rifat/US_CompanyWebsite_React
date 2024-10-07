@@ -53,7 +53,7 @@ const AboutUs = () => (
               <p className="text-2xl font-light text-[#8F969D] mb-[25px]">
                 /About Us
               </p>
-              <h1 className="font-thin text-[56px] laptop:text-[70px] desktop:text-[112px] leading-[64px] laptop:leading-[122px] text-[#00040D] max-w-[324px] laptop:max-w-[648px]">
+              <h1 className="font-thin  text-[36px] tab:text-[56px] laptop:text-[70px] desktop:text-[112px] leading-10 tab:leading-[64px] laptop:leading-[122px] text-[#00040D] max-w-[324px] laptop:max-w-[648px]">
                 Why <span className="text-[#8F969D]">Choose</span>
                 <br />
                 Bluetelecast?

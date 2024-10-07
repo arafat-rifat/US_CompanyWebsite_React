@@ -7,7 +7,7 @@ const ServicesCart = ({ title, description, src }) => (
     </div>
 
     {/* Description */}
-    <div className="flex justify-between">
+    <div className="flex justify-between flex-col laptop:flex-row">
       <div className="max-w-[284px]">
         {/* Heading part */}
         <h6 className="text-[#05070E] text-[32px] leading-[43px] font-semibold">
@@ -15,7 +15,7 @@ const ServicesCart = ({ title, description, src }) => (
         </h6>
       </div>
       {/* 2nd part */}
-      <div className="text-center hidden tab:block">
+      <div className="text-center ">
         <p className="text-[#00040D] text-2xl leading-8 max-w-[600px] text-start">
           {description}
         </p>
