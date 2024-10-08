@@ -15,7 +15,7 @@ import GrapichCustomImage from "../../assets/Services/GrapichDesignCustomImage.j
 
 const ServicesSection = () => (
   <RevealOnScroll>
-    <section className="bg-[#E8F0F9]">
+    <section>
       <Container>
         {/* Main div */}
         <div className="flex flex-col laptop:flex-row pt-[58px] pb-[100px] gap-10 laptop:gap-0 px-8 desktop:px-0">
