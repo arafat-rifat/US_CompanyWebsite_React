@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import Container from "./Container";
@@ -8,10 +8,14 @@ import logo from "../../assets/logo.png";
 
 function Navbar() {
   const [isShow, setIsShow] = useState(false);
+  const location = useLocation();
 
   const handleOpen = () => {
     setIsShow((prevIsShow) => !prevIsShow);
   };
+
+  // Function to check if the current route is active
+  const isActive = (path) => location.pathname === path;
 
   return (
     <>
@@ -30,19 +34,56 @@ function Navbar() {
               <Flex className="hidden laptop:flex desktop:flex justify-between gap-[40px] laptop:gap-[25px]">
                 <ul className="flex items-center gap-[24px] text-[16px] text-[#FFFFFF] font-normal">
                   <li>
-                    <Link to="/about">About</Link>
+                    <Link
+                      to="/about"
+                      className={`${
+                        isActive("/about") ? "text-[#8F969D]" : "text-white"
+                      } hover:text-[#8F969D] transition-transform duration-500`}
+                    >
+                      About
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/services">Services</Link>
+                    <Link
+                      to="/services"
+                      className={`${
+                        isActive("/services") ? "text-[#8F969D]" : "text-white"
+                      } hover:text-[#8F969D] transition-transform duration-500`}
+                    >
+                      Services
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/caseStudy">Cases</Link>
+                    <Link
+                      to="/caseStudy/1"
+                      className={`${
+                        isActive("/caseStudy/1")
+                          ? "text-[#8F969D]"
+                          : "text-white"
+                      } hover:text-[#8F969D] transition-transform duration-500`}
+                    >
+                      Cases
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/Career">Career</Link>
+                    <Link
+                      to="/Career"
+                      className={`${
+                        isActive("/Career") ? "text-[#8F969D]" : "text-white"
+                      } hover:text-[#8F969D] transition-transform duration-500`}
+                    >
+                      Career
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/project">Project</Link>
+                    <Link
+                      to="/project"
+                      className={`${
+                        isActive("/project") ? "text-[#8F969D]" : "text-white"
+                      } hover:text-[#8F969D] transition-transform duration-500`}
+                    >
+                      Project
+                    </Link>
                   </li>
                 </ul>
 
