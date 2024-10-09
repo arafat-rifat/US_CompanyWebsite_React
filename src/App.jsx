@@ -22,6 +22,7 @@ import ServicesLayout from "./components/LayOut/ServicesLayout";
 import Services from "./pages/Services";
 import PrivacyAndPolicyLayout from "./components/LayOut/PrivacyAndPolicyLayout";
 import PrivacyAndPolicyPage from "./pages/PrivacyAndPolicyPage";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const router = createBrowserRouter([
   {
@@ -193,7 +194,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ScrollToTopButton />
+    </>
+  );
 }
 
 export default App;

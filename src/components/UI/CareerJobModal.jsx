@@ -23,7 +23,7 @@ const CareerJobModal = ({ openModal, closeModal, jobDetails }) => {
             {title}
           </h4>
           {/* Subtitle Description */}
-          <div className="pt-6 laptop:pt-[48px] pb-5 laptop:pb-[40px] flex flex-col justify-start">
+          <div className="pt-3 laptop:pt-[28px] pb-2 laptop:pb-[20px] flex flex-col justify-start">
             <h3 className="font-medium text-lg laptop:text-[32px] leading-4 laptop:leading-8 text-[#191C23]">
               {subTitle}
             </h3>
@@ -32,7 +32,7 @@ const CareerJobModal = ({ openModal, closeModal, jobDetails }) => {
             </p>
           </div>
           {/* Role */}
-          <div className="pt-6 laptop:pt-[48px] pb-5 laptop:pb-[40px] flex flex-col justify-start">
+          <div className="pt-3 laptop:pt-[28px] pb-2 laptop:pb-[20px] flex flex-col justify-start">
             <h3 className="font-medium text-lg laptop:text-[32px] leading-4 laptop:leading-8 text-[#191C23]">
               The role
             </h3>
@@ -41,7 +41,7 @@ const CareerJobModal = ({ openModal, closeModal, jobDetails }) => {
             </p>
           </div>
           {/* Job Requirements */}
-          <div className="pt-6 laptop:pt-[48px] pb-5 laptop:pb-[40px] flex flex-col justify-start">
+          <div className="pt-3 laptop:pt-[28px] pb-2 laptop:pb-[20px] flex flex-col justify-start">
             <h3 className="font-medium text-lg laptop:text-[32px] leading-4 laptop:leading-8 text-[#191C23]">
               Job requirements
             </h3>
@@ -52,15 +52,25 @@ const CareerJobModal = ({ openModal, closeModal, jobDetails }) => {
             </ul>
           </div>
           {/* Job Responsibilities */}
-          <div className="pt-6 laptop:pt-[48px] pb-5 laptop:pb-[40px] flex flex-col justify-start border-b border-black">
+          <div className="pt-3 laptop:pt-[28px] pb-2 laptop:pb-[20px] flex flex-col justify-start ">
             <h3 className=" font-medium text-lg laptop:text-[32px] leading-4 laptop:leading-8 text-[#191C23]">
-              Job responsibilities
+              How We Support You
             </h3>
             <ul className="text-sm laptop:text-lg  leading-6 laptop:leading-7 text-[#191C23] pt-5 flex flex-col gap-1">
               {responsibilities.map((responsibilities) => (
                 <li key={responsibilities}>&#9679; {responsibilities}</li>
               ))}
             </ul>
+          </div>
+          {/* Join BlueTelecast*/}
+          <div className="pt-3 laptop:pt-[28px] pb-2 laptop:pb-[20px] flex flex-col justify-start border-b border-black">
+            <h3 className=" font-medium text-lg laptop:text-[32px] leading-4 laptop:leading-8 text-[#191C23]">
+              Join Bluetelecast!
+            </h3>
+            <p className="text-sm laptop:text-lg  leading-6 laptop:leading-7 text-[#191C23] pt-5 flex flex-col gap-1">
+              Be part of a global team where your unique talents can thrive. If
+              you’re ready to elevate your design career, apply today!
+            </p>
           </div>
 
           {/* <JobApplicationForm jobId={id} position={title} /> */}

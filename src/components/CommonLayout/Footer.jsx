@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Container from "./Container";
 import RevealOnScroll from "./RevealOnScroll";
 import logo from "../../assets/logo.png";
 import footerImage from "/src/assets/footerImage.png";
+
+// Function to check if the current route is active
+const isActive = (path) => location.pathname === path;
 
 const handleLinkClick = () => {
   window.scrollTo({
@@ -17,7 +20,7 @@ const Footer = () => (
       <Container>
         <div className="pt-6 border-t border-[#A7A8AA4D] px-[20px] desktop:px-0">
           {/* footer heading */}
-          <div className="flex flex-col  laptop:flex-row laptop:justify-between flex-wrap">
+          <div className="flex flex-col items-center  laptop:flex-row laptop:justify-between flex-wrap">
             {/* logo */}
             <div>
               <img src={logo} alt="Logo" />
@@ -26,19 +29,54 @@ const Footer = () => (
             <div>
               <ul className="flex flex-col tab:flex-row flex-wrap gap-4 tab:gap-[35px] laptop:gap-[51px] text-[#FFFFFF] font-light text-[16px] laptop:text-[24px] py-6">
                 <li onClick={handleLinkClick}>
-                  <Link to="/about">About</Link>
+                  <Link
+                    to="/about"
+                    className={`${
+                      isActive("/about") ? "text-[#8F969D]" : "text-white"
+                    } hover:text-[#8F969D] transition-transform duration-500`}
+                  >
+                    About
+                  </Link>
                 </li>
                 <li onClick={handleLinkClick}>
-                  <Link to="/services">Services</Link>
+                  <Link
+                    to="/services"
+                    className={`${
+                      isActive("/services") ? "text-[#8F969D]" : "text-white"
+                    } hover:text-[#8F969D] transition-transform duration-500`}
+                  >
+                    Services
+                  </Link>
                 </li>
                 <li onClick={handleLinkClick}>
-                  <Link to="/caseStudy">Cases</Link>
+                  <Link
+                    to="/caseStudy/1"
+                    className={`${
+                      isActive("/caseStudy/1") ? "text-[#8F969D]" : "text-white"
+                    } hover:text-[#8F969D] transition-transform duration-500`}
+                  >
+                    Cases
+                  </Link>
                 </li>
                 <li onClick={handleLinkClick}>
-                  <Link to="/Career">Career</Link>
+                  <Link
+                    to="/Career"
+                    className={`${
+                      isActive("/Career") ? "text-[#8F969D]" : "text-white"
+                    } hover:text-[#8F969D] transition-transform duration-500`}
+                  >
+                    Career
+                  </Link>
                 </li>
                 <li onClick={handleLinkClick}>
-                  <Link to="/project">Project</Link>
+                  <Link
+                    to="/project"
+                    className={`${
+                      isActive("/project") ? "text-[#8F969D]" : "text-white"
+                    } hover:text-[#8F969D] transition-transform duration-500`}
+                  >
+                    Project
+                  </Link>
                 </li>
               </ul>
             </div>

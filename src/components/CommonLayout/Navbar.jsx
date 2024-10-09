@@ -33,62 +33,57 @@ function Navbar() {
             <div>
               <Flex className="hidden laptop:flex desktop:flex justify-between gap-[40px] laptop:gap-[25px]">
                 <ul className="flex items-center gap-[24px] text-[16px] text-[#FFFFFF] font-normal">
-                  <li>
-                    <Link
-                      to="/about"
-                      className={`${
-                        isActive("/about") ? "text-[#8F969D]" : "text-white"
-                      } hover:text-[#8F969D] transition-transform duration-500`}
-                    >
-                      About
-                    </Link>
+                  <li
+                    className={`${
+                      isActive("/about") ? "text-[#8F969D] pb-2" : "text-white"
+                    } hover:text-[#8F969D]  duration-300`}
+                  >
+                    <Link to="/about">About</Link>
                   </li>
-                  <li>
-                    <Link
-                      to="/services"
-                      className={`${
-                        isActive("/services") ? "text-[#8F969D]" : "text-white"
-                      } hover:text-[#8F969D] transition-transform duration-500`}
-                    >
-                      Services
-                    </Link>
+                  <li
+                    className={`${
+                      isActive("/services")
+                        ? "text-[#8F969D] pb-2"
+                        : "text-white"
+                    } hover:text-[#8F969D] duration-300`}
+                  >
+                    <Link to="/services">Services</Link>
                   </li>
-                  <li>
-                    <Link
-                      to="/caseStudy/1"
-                      className={`${
-                        isActive("/caseStudy/1")
-                          ? "text-[#8F969D]"
-                          : "text-white"
-                      } hover:text-[#8F969D] transition-transform duration-500`}
-                    >
-                      Cases
-                    </Link>
+                  <li
+                    className={`${
+                      isActive("/caseStudy/1")
+                        ? "text-[#8F969D] pb-2"
+                        : "text-white"
+                    } hover:text-[#8F969D] duration-300`}
+                  >
+                    <Link to="/caseStudy/1">Cases</Link>
                   </li>
-                  <li>
-                    <Link
-                      to="/Career"
-                      className={`${
-                        isActive("/Career") ? "text-[#8F969D]" : "text-white"
-                      } hover:text-[#8F969D] transition-transform duration-500`}
-                    >
-                      Career
-                    </Link>
+                  <li
+                    className={`${
+                      isActive("/Career") ? "text-[#8F969D] pb-2" : "text-white"
+                    } hover:text-[#8F969D] duration-300`}
+                  >
+                    <Link to="/Career">Career</Link>
                   </li>
-                  <li>
-                    <Link
-                      to="/project"
-                      className={`${
-                        isActive("/project") ? "text-[#8F969D]" : "text-white"
-                      } hover:text-[#8F969D] transition-transform duration-500`}
-                    >
-                      Project
-                    </Link>
+                  <li
+                    className={`${
+                      isActive("/project")
+                        ? "text-[#8F969D] pb-2"
+                        : "text-white"
+                    } hover:text-[#8F969D]  duration-200`}
+                  >
+                    <Link to="/project">Project</Link>
                   </li>
                 </ul>
 
                 <Link to="/contact">
-                  <button className="py-3 px-6 border border-[#FFFFFF] rounded-[22px] text-[#FFFFFF]">
+                  <button
+                    className={`${
+                      isActive("/contact")
+                        ? "bg-[#8F969D] py-3 px-6 border border-[#FFFFFF] rounded-[22px] text-[#FFFFFF]"
+                        : "py-3 px-6 border border-[#FFFFFF] rounded-[22px] text-[#FFFFFF]"
+                    } hover:bg-gray-700 py-3 px-6 border border-[#FFFFFF] rounded-[22px] text-[#FFFFFF]  duration-300`}
+                  >
                     Contact us
                     <span className="ml-[14px]">&rarr;</span>
                   </button>
