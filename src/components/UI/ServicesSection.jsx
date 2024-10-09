@@ -10,12 +10,10 @@ import AppDevelopment from "../../assets/Services/AppDevelopment.jpg";
 import DataBaseDesign from "../../assets/Services/DataBaseDesign.jpg";
 import CustomApp from "../../assets/Services/CustomApp.jpg";
 import GrapichDesign from "../../assets/Services/GrapichDesign.jpg";
-import SoftwareCustomImage from "../../assets/Services/SoftwareCustomImage.png";
-import GrapichCustomImage from "../../assets/Services/GrapichDesignCustomImage.jpeg";
 
 const ServicesSection = () => (
   <RevealOnScroll>
-    <section>
+    <section className="bg-[#E8F0F9]">
       <Container>
         {/* Main div */}
         <div className="flex flex-col laptop:flex-row pt-[58px] pb-[100px] gap-10 laptop:gap-0 px-8 desktop:px-0">
@@ -47,7 +45,7 @@ const ServicesSection = () => (
           {/* Right */}
           <div className="flex flex-col gap-[70px] order-1 laptop:order-2">
             <ServicesCart
-              src={SoftwareCustomImage}
+              src={WebDevelopment}
               title="Web Designing and Development"
               description="Discover the art and science of online presence with
                         Bluetelecast's web design and development services.
@@ -57,7 +55,7 @@ const ServicesSection = () => (
                         compelling digital experiences"
             />
             <ServicesCart
-              src={GrapichCustomImage}
+              src={SoftwareDevelopment}
               title="Software Development"
               description="Empower your business with our custom software
 solutions. We specialize in optimizing your operations
@@ -67,7 +65,7 @@ case studies, demonstrating the tangible benefits of
 our tailored software solutions."
             />
             <ServicesCart
-              src={SoftwareCustomImage}
+              src={AppDevelopment}
               title="Mobile Apps"
               description="Extend your brand's reach with our cutting-edge
 mobile app development. Our mobile apps
@@ -77,7 +75,7 @@ devices, as we redefine your presence in the
 mobile world."
             />
             <ServicesCart
-              src={GrapichCustomImage}
+              src={DataBaseDesign}
               title="Database Designing"
               description="Recognizing the value of your data, we ensure
 efficient and secure database design. Our expertise
@@ -87,7 +85,7 @@ security. Trust us to safeguard the integrity of your
 valuable information."
             />
             <ServicesCart
-              src={SoftwareCustomImage}
+              src={CustomApp}
               title="Custom Apps development"
               description="Go beyond the ordinary with Bluetelecast’s unique
 app solutions. We innovate to create apps that stand
@@ -98,7 +96,7 @@ our diverse application development
 "
             />
             <ServicesCart
-              src={GrapichCustomImage}
+              src={GrapichDesign}
               title="Graphic Design"
               description="Explore the world of graphic design with Bluetelecast.
 Our designs don't just look good; they're made to

@@ -5,6 +5,15 @@ import ArrowRightWhite from "../assets/Arrow - Right white.png";
 
 const ContactUsForm = () => {
   const [selectedServices, setSelectedServices] = useState([]); // Track selected services
+  const [formData, setFormData] = useState({
+    fullName: "",
+    companyName: "",
+    email: "",
+    phoneNumber: "",
+    projectDetails: "",
+  });
+
+  const [errors, setErrors] = useState({}); // Track form errors
 
   // Services array
   const services = [
@@ -25,6 +34,56 @@ const ContactUsForm = () => {
     } else {
       setSelectedServices([...selectedServices, service]);
     }
+  };
+
+  // Handle input change for form fields
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    setErrors({ ...errors, [e.target.name]: "" }); // Clear errors for this field on change
+  };
+
+  // Form validation function
+  const validate = () => {
+    let newErrors = {};
+    if (!formData.fullName) newErrors.fullName = "Full name is required";
+    if (!formData.companyName)
+      newErrors.companyName = "Company name is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.phoneNumber)
+      newErrors.phoneNumber = "Phone number is required";
+    if (!formData.projectDetails)
+      newErrors.projectDetails = "Project details are required";
+    if (selectedServices.length === 0)
+      newErrors.services = "Please select at least one service";
+
+    return newErrors;
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent form from refreshing the page
+
+    const validationErrors = validate(); // Validate form
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors); // If validation fails, set errors
+      return; // Prevent form submission
+    }
+
+    // If validation passes, log form data and clear the form
+    console.log("Form Data Submitted: ", { ...formData, selectedServices });
+
+    // Clear the form after submission
+    setFormData({
+      fullName: "",
+      companyName: "",
+      email: "",
+      phoneNumber: "",
+      projectDetails: "",
+    });
+    setSelectedServices([]); // Clear selected services
   };
 
   return (
@@ -61,47 +120,85 @@ const ContactUsForm = () => {
                   </Button>
                 ))}
               </div>
+              {errors.services && (
+                <p className="text-red-500">*{errors.services}</p>
+              )}
             </div>
 
             {/* form section */}
             <div className="pt-[40px] px-[20px] laptop:px-0">
-              <form>
+              <form onSubmit={handleSubmit}>
                 {/* Main Div */}
                 <div className="flex flex-col gap-[14px]">
                   {/* Name and company name field */}
                   <div className="flex flex-wrap gap-[20px]">
-                    <input
-                      type="text"
-                      placeholder="Full name"
-                      className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px] px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA] "
-                    />
-                    <input
-                      type="text"
-                      placeholder="Company name"
-                      className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px] px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA] "
-                    />
+                    <div>
+                      {errors.fullName && (
+                        <p className="text-red-500">{errors.fullName}</p>
+                      )}
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        placeholder="Full name"
+                        className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px] px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA]"
+                      />
+                    </div>
+
+                    <div>
+                      {errors.companyName && (
+                        <p className="text-red-500">{errors.companyName}</p>
+                      )}
+                      <input
+                        type="text"
+                        name="companyName"
+                        value={formData.companyName}
+                        onChange={handleChange}
+                        placeholder="Company name"
+                        className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px] px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA]"
+                      />
+                    </div>
                   </div>
                   {/* Others Field */}
                   <div className="flex flex-col gap-[14px]">
+                    {errors.email && (
+                      <p className="text-red-500">{errors.email}</p>
+                    )}
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="Company@gmail.com"
                       className="bg-[#E8F0F980] text-[#191C23] text-lg rounded-[14px] px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA]"
                     />
+                    {errors.phoneNumber && (
+                      <p className="text-red-500">{errors.phoneNumber}</p>
+                    )}
                     <input
                       type="number"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
                       placeholder="Phone Number"
                       className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px]  px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA]"
                     />
+                    {errors.projectDetails && (
+                      <p className="text-red-500">{errors.projectDetails}</p>
+                    )}
                     <textarea
                       type="text"
+                      name="projectDetails"
+                      value={formData.projectDetails}
+                      onChange={handleChange}
                       placeholder="Project details"
                       className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px] px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA]"
                     />
                   </div>
                   {/* Submit Section */}
                   <div className=" flex justify-between flex-col laptop:flex-row pt-[30px]  items-center laptop:items-start gap-5">
-                    {/* hate Contact Forms? */}
+                    {/* Hate Contact Forms? */}
                     <div className="order-2 laptop:order-1">
                       <p className="text-lg text-[#8F969D]">
                         Hate contact forms?
@@ -112,11 +209,17 @@ const ContactUsForm = () => {
                     </div>
                     {/* Submit Button */}
                     <div className="flex order-1 laptop:order-2">
-                      <Button className="text-[#191C23] rounded-[34px] text-2xl px-[32px] py-[15px] border border-[#191C23]">
+                      <Button
+                        type="submit"
+                        className="text-[#191C23] rounded-[34px] text-2xl px-[32px] py-[15px] border border-[#191C23]"
+                      >
                         Submit
                       </Button>
-                      <Button className="rounded-[30px] text-2xl px-[27px] py-[13px] bg-[#191C23]">
-                        <img src={ArrowRightWhite} />
+                      <Button
+                        type="submit"
+                        className="rounded-[30px] text-2xl px-[27px] py-[13px] bg-[#191C23]"
+                      >
+                        <img src={ArrowRightWhite} alt="arrow" />
                       </Button>
                     </div>
                   </div>
@@ -129,4 +232,5 @@ const ContactUsForm = () => {
     </section>
   );
 };
+
 export default ContactUsForm;

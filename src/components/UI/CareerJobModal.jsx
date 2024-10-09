@@ -1,5 +1,6 @@
 import { Modal } from "antd";
 import JobApplicationForm from "./JobApplicationForm";
+import CareerApplicationFrom from "./CareerApplicationFrom";
 
 const CareerJobModal = ({ openModal, closeModal, jobDetails }) => {
   const {
@@ -46,7 +47,7 @@ const CareerJobModal = ({ openModal, closeModal, jobDetails }) => {
             </h3>
             <ul className="text-sm laptop:text-lg  leading-6 laptop:leading-7 text-[#191C23] pt-5 flex flex-col gap-1">
               {requirements.map((requirement) => (
-                <li>&#9679; {requirement}</li>
+                <li key={requirement}>&#9679; {requirement}</li>
               ))}
             </ul>
           </div>
@@ -57,12 +58,13 @@ const CareerJobModal = ({ openModal, closeModal, jobDetails }) => {
             </h3>
             <ul className="text-sm laptop:text-lg  leading-6 laptop:leading-7 text-[#191C23] pt-5 flex flex-col gap-1">
               {responsibilities.map((responsibilities) => (
-                <li>&#9679; {responsibilities}</li>
+                <li key={responsibilities}>&#9679; {responsibilities}</li>
               ))}
             </ul>
           </div>
 
-          <JobApplicationForm jobId={id} position={title} />
+          {/* <JobApplicationForm jobId={id} position={title} /> */}
+          <CareerApplicationFrom jobId={id} position={title} />
         </div>
       </Modal>
     </>
