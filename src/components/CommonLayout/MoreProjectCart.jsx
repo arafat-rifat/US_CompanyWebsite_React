@@ -29,8 +29,8 @@ const MoreProjectCart = ({ project }) => {
 
         {/* Button */}
         <Link to={`/caseStudy/${project.id}`}>
-          <div className="flex pb-[50px] gap-[20px]" onClick={handleLinkClick}>
-            <button className="rounded-[34px] px-[21px] laptop:px-[32px] py-3 laptop:py-[15px] border border-[#191C23] text-base laptop:text-[24px]">
+          <div className="flex pb-[50px]" onClick={handleLinkClick}>
+            <button className="rounded-[34px] px-[21px] laptop:px-[32px] py-3 laptop:py-[15px] border border-[#191C23] hover:bg-[#191C23]  hover:shadow-xl hover:text-white duration-300 text-base laptop:text-[24px]">
               View Project
             </button>
             <div className="bg-[#191C23] rounded-[30px] px-[27px] py-[13px] hidden laptop:block">

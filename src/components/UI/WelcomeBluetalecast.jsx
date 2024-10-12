@@ -2,7 +2,7 @@ import { useState } from "react";
 import Container from "../CommonLayout/Container";
 import RevealOnScroll from "../CommonLayout/RevealOnScroll";
 
-const WelcomeBluetalecast = ({ title1, title2 }) => {
+const WelcomeBluetalecast = ({ title1, title2, className }) => {
   const [activeLink, setActiveLink] = useState(null);
 
   const handleLinkClick = (link) => {
@@ -22,7 +22,7 @@ const WelcomeBluetalecast = ({ title1, title2 }) => {
                 </p>
                 <h3 className="text-[#FFFFFF] text-[24px] laptop:text-[52px] font-thin  max-w-[353px] laptop:max-w-[680px] desktop:max-w-[760px]">
                   <span className="text-[#8F969D]">{title1} &nbsp;</span>
-                  {title2}
+                  <span className={className}>{title2}</span>
                 </h3>
               </div>
 

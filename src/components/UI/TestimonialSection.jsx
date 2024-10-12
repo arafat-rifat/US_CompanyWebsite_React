@@ -19,10 +19,10 @@ const TestimonialSection = () => (
             <p className="text-[#666666] font-light text-[16px] laptop:text-[24px]">
               /Testimonials
             </p>
-            <h3 className="text-[#FFFFFF] text-[32px] laptop:text-[80px] font-thin">
+            <h3 className="text-[#FFFFFF] text-[32px] laptop:text-[80px] font-thin hover:text-gray-700 duration-300">
               What our clients say
             </h3>
-            <p className="text-[#FFFFFF] text-[16px] laptop:text-[24px] font-thin">
+            <p className="text-[#FFFFFF] text-[16px] laptop:text-[24px] font-thin hover:text-gray-600 duration-300">
               Our Clients Can’t Say Enough About Us.
             </p>
           </div>

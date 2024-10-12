@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"; // Import PropTypes
 
 const WelcomePackCart = ({ num, title, subtitle }) => (
-  <div className="rounded-[32px] flex flex-col items-center laptop:items-start gap-11 laptop:gap-[118px]  justify-between bg-[#FFFFFF] px-[35px] py-[50px] ">
+  <div className="rounded-[32px] flex flex-col items-center laptop:items-start gap-11 laptop:gap-[118px]  justify-between bg-[#FFFFFF] px-[35px] py-[50px] hover:shadow-2xl duration-500 ">
     {/* number */}
     <div className="flex justify-center items-center px-1 py-1 rounded-full border w-[78px] h-[78px] border-[#E8F0F9]">
       <span className="text-[26px]">{num}</span>

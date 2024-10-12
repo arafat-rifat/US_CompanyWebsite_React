@@ -1,7 +1,9 @@
+import React, { useEffect } from "react";
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
+  useLocation,
 } from "react-router-dom";
 import Home from "./pages/Home";
 import RootLayout from "./components/LayOut/RootLayout";
@@ -22,8 +24,11 @@ import ServicesLayout from "./components/LayOut/ServicesLayout";
 import Services from "./pages/Services";
 import PrivacyAndPolicyLayout from "./components/LayOut/PrivacyAndPolicyLayout";
 import PrivacyAndPolicyPage from "./pages/PrivacyAndPolicyPage";
-import ScrollToTopButton from "./components/ScrollToTopButton";
-
+import ScrollToTopButton from "./components/CommonLayout/ScrollToTopButton";
+import ReactGA from "react-ga4";
+import Cookies from "js-cookie";
+import { setCookies } from "./CookiesUtils/CookiesUtils";
+import CookiesContent from "./components/CommonLayout/CookiesContent";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -193,10 +198,45 @@ const router = createBrowserRouter([
   },
 ]);
 
+const GA4PageViewTracker = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // To is to tracj page using GA //
+    ReactGA.send({ hitType: "pageview", page: location.pathname });
+  }, [location]);
+
+  return null;
+};
+
 function App() {
+  // GA tag Id
+  const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
+
+  // Check for existing cookie consent
+  const cookiePermission = Cookies.get("cookiePermission");
+
+  useEffect(() => {
+    // This is for setting up cookies with a theme and cookie permissions.
+
+    // Only set cookies if consent has not been given yet
+    if (!cookiePermission) {
+      setCookies("light", true); // Set default theme and consent to false initially
+    }
+
+    if (GA_MEASUREMENT_ID) {
+      ReactGA.initialize(GA_MEASUREMENT_ID);
+    }
+  }, [GA_MEASUREMENT_ID, cookiePermission]);
+
+  console.log("GA_MEasurement :", GA_MEASUREMENT_ID);
   return (
     <>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}>
+        <GA4PageViewTracker />
+      </RouterProvider>
+      {/* Render the CookiesContent only if consent is not yet given */}
+      {!cookiePermission && <CookiesContent />}
       <ScrollToTopButton />
     </>
   );

@@ -51,12 +51,12 @@ function Navbar() {
                   </li>
                   <li
                     className={`${
-                      isActive("/caseStudy/1")
+                      isActive("/project")
                         ? "text-[#8F969D] pb-2"
                         : "text-white"
-                    } hover:text-[#8F969D] duration-300`}
+                    } hover:text-[#8F969D]  duration-200`}
                   >
-                    <Link to="/caseStudy/1">Cases</Link>
+                    <Link to="/project">Project</Link>
                   </li>
                   <li
                     className={`${
@@ -64,15 +64,6 @@ function Navbar() {
                     } hover:text-[#8F969D] duration-300`}
                   >
                     <Link to="/Career">Career</Link>
-                  </li>
-                  <li
-                    className={`${
-                      isActive("/project")
-                        ? "text-[#8F969D] pb-2"
-                        : "text-white"
-                    } hover:text-[#8F969D]  duration-200`}
-                  >
-                    <Link to="/project">Project</Link>
                   </li>
                 </ul>
 

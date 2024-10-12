@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "../CommonLayout/Container";
 import RevealOnScroll from "../CommonLayout/RevealOnScroll";
 import ArrowRight from "../../assets/Arrow - Right 3.png";
+import ArrowRightWhite from "../../assets/Arrow - Right white.png";
 
 const handleLinkClick = () => {
   window.scrollTo({
@@ -36,10 +37,19 @@ const ContactUsSection = () => (
             <div className="flex justify-center items-center">
               <Link to="/contact">
                 <button
-                  className=" bg-[#FFFFFF] px-[23px] py-[23px] laptop:px-[46px] laptop:py-[45px] rounded-full "
+                  className="group hover:bg-[#191C23] duration-200 shadow-lg hover:shadow-2xl bg-[#FFFFFF] px-[20px] py-[20px] laptop:px-[46px] laptop:py-[45px] rounded-full "
                   onClick={handleLinkClick}
                 >
-                  <img src={ArrowRight} alt="pic" className="w-full h-full" />
+                  <img
+                    src={ArrowRight}
+                    alt="pic"
+                    className="w-full h-full group-hover:hidden"
+                  />
+                  <img
+                    src={ArrowRightWhite}
+                    alt="pic"
+                    className="w-full h-full hidden group-hover:block"
+                  />
                 </button>
               </Link>
             </div>

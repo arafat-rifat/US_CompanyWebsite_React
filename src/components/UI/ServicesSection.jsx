@@ -18,7 +18,7 @@ const ServicesSection = () => (
         {/* Main div */}
         <div className="flex flex-col laptop:flex-row pt-[58px] pb-[100px] gap-10 laptop:gap-0 px-8 desktop:px-0">
           {/* left  */}
-          <div className="order-2 laptop:order-1">
+          <div className="order-2 laptop:order-1 laptop:sticky laptop:top-[20px] laptop:w-[400px]">
             <div className="flex flex-col gap-[22px] laptop:gap-[45px] order-2 laptop:order-1">
               {/* Information */}
               <div>
@@ -31,7 +31,7 @@ const ServicesSection = () => (
               {/* Button */}
               <Link to="/contact">
                 <div className="flex pb-[50px]">
-                  <button className="rounded-[34px] px-[32px] py-[15px] border border-[#191C23] text-[24px]">
+                  <button className="rounded-[34px] px-[32px] py-[15px] border border-[#191C23] hover:bg-[#191C23] hover:text-white duration-300 text-[24px]">
                     Start a project
                   </button>
                   <div className="bg-[#191C23] rounded-[30px] px-[27px] py-[13px]">
@@ -43,7 +43,7 @@ const ServicesSection = () => (
           </div>
 
           {/* Right */}
-          <div className="flex flex-col gap-[70px] order-1 laptop:order-2">
+          <div className="flex flex-col gap-[70px] order-1 laptop:order-2 laptop:overflow-y-auto laptop:max-h-[calc(100vh-150px)]">
             <ServicesCart
               src={WebDevelopment}
               title="Web Designing and Development"

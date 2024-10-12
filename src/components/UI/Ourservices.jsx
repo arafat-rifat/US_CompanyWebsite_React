@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "../CommonLayout/Container";
 import RevealOnScroll from "../CommonLayout/RevealOnScroll";
 import ArrowRight from "../../assets/Arrow - Right 3.png";
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 const handleLinkClick = () => {
   window.scrollTo({
@@ -36,10 +37,15 @@ const Ourservices = () => (
           <div className="flex flex-col-reverse ml-[129px]">
             <div className="hidden laptop:block">
               <Link to="/contact" onClick={handleLinkClick}>
-                <button className="flex items-center py-[14px] px-[25px] bg-[#FFFFFF] rounded-[30px] text-2xl">
+                <button className="group flex items-center py-[14px] px-[25px] bg-[#FFFFFF] rounded-[30px] text-2xl hover:bg-gray-700 hover:text-white duration-300">
                   Learn More
-                  <span className="pl-3">
-                    <img src={ArrowRight} alt="arrowright" />
+                  <span className="pl-3 flex items-center">
+                    <FaAngleDoubleRight className="opacity-0 text-white group-hover:opacity-100 duration-300" />
+                    <img
+                      src={ArrowRight}
+                      alt="arrowright"
+                      className="group-hover:opacity-0 duration-300"
+                    />
                   </span>
                 </button>
               </Link>

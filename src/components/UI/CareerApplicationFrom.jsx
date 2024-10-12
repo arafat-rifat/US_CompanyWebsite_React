@@ -159,7 +159,7 @@ const CareerApplicationFrom = ({ jobId, position, jobTitle }) => {
           {/* Submit Button */}
           <div className="flex ">
             <Button
-              className="text-[#191C23]  rounded-[34px] text-base laptop:text-2xl px-4 laptop:px-[32px] py-4 laptop:py-[15px] border border-[#191C23]"
+              className="text-[#191C23]  rounded-[34px] text-base laptop:text-2xl px-4 laptop:px-[32px] py-4 laptop:py-[15px] border border-[#191C23] hover:bg-[#191C23] hover:text-white duration-300"
               type="submit"
             >
               Send message

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { IoArrowUpSharp } from "react-icons/io5";
+import { AiOutlineVerticalAlignTop } from "react-icons/ai";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,12 +35,12 @@ const ScrollToTopButton = () => {
     <button
       type="button"
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 p-3 rounded-full bg-gray-700 text-white transition-opacity ${
+      className={`fixed bottom-8 right-8 p-3 rounded-full bg-white hover:bg-slate-200 text-black transition-opacity ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       style={{ display: isVisible ? "block" : "none" }} // Hide the button when not visible
     >
-      <IoArrowUpSharp />
+      <AiOutlineVerticalAlignTop className="text-lg tab:text-2xl laptop:text-3xl" />
     </button>
   );
 };

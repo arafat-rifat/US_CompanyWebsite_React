@@ -10,7 +10,11 @@ const CareerLayout = ({ title1, title2 }) => (
     <Outlet />
 
     <ContactUsSection />
-    <WelcomeBluetalecast title1={title1} title2={title2} />
+    <WelcomeBluetalecast
+      title1={title1}
+      title2={title2}
+      className="hover:text-[#87CEEB] duration-300 shadow-rose-200"
+    />
     <Footer />
   </>
 );

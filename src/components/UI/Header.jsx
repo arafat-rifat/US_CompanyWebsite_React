@@ -28,7 +28,7 @@ const Header = () => (
 
             {/* This is for Button and Information */}
 
-            <div className="flex flex-col laptop:flex-row justify-between items-end flex-wrap px-[20px] laptop:px-0">
+            <div className="flex flex-col laptop:flex-row justify-between items-start laptop:items-end flex-wrap px-[20px] laptop:px-0">
               {/* Left Information */}
               <div className="flex flex-col  gap-[25px]">
                 <p className="text-[#B2B2B2] font-thin text-[18px] tab:text-[24px]">
@@ -47,7 +47,7 @@ const Header = () => (
                   onClick={handleLinkClick}
                 >
                   <div>
-                    <Button className="border border-[#FFFFFF] rounded-[34px] text-[#FFFFFF] py-[15px] px-[32px]">
+                    <Button className="border border-[#FFFFFF] rounded-[34px] text-[#FFFFFF] py-[15px] px-[32px] hover:bg-gray-700 duration-200">
                       Let&apos;s Talk
                     </Button>
                   </div>

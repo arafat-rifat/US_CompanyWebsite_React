@@ -8,6 +8,7 @@ import samsour from "../../assets/teamPicture/resize-A-Samsour.jpg";
 import Quaize from "../../assets/teamPicture/Resize-Quaize.png";
 import Susan from "../../assets/teamPicture/Susan-Resize.jpeg";
 import ArrowRightWhite from "../../assets/Arrow - Right white.png";
+import ArrowRightBlack from "../../assets/Arrow - Right 3.png";
 import { Link } from "react-router-dom";
 
 const handleLinkClick = () => {
@@ -58,12 +59,21 @@ const TeamCartSection = () => (
           {/* This is For Button */}
 
           <Link to="/career">
-            <div className="flex items-center" onClick={handleLinkClick}>
-              <button className="text-[#FFFFFF] text-[24px] px-[32px] py-[15px] bg-[#191C23] rounded-[34px]">
+            <div className="flex items-center group " onClick={handleLinkClick}>
+              <button className="text-[#FFFFFF] text-[24px] px-[32px] py-[15px] bg-[#191C23] group-hover:bg-white group-hover:shadow-2xl group-hover:text-black duration-300 rounded-[34px]">
                 Join Our Team
               </button>
-              <button className="px-[27px] py-[13px] bg-[#191C23] rounded-[30px]">
-                <img src={ArrowRightWhite} alt="Right arrow icon" />
+              <button className="px-[27px] py-[13px] bg-[#191C23] group-hover:bg-white rounded-[30px] hover:shadow-2xl duration-300">
+                <img
+                  src={ArrowRightWhite}
+                  alt="Right arrow icon"
+                  className="group-hover:hidden "
+                />
+                <img
+                  src={ArrowRightBlack}
+                  alt="Right arrow icon"
+                  className="hidden group-hover:block "
+                />
               </button>
             </div>
           </Link>

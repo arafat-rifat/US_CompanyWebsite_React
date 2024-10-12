@@ -20,7 +20,7 @@ const Footer = () => (
       <Container>
         <div className="pt-6 border-t border-[#A7A8AA4D] px-[20px] desktop:px-0">
           {/* footer heading */}
-          <div className="flex flex-col items-center  laptop:flex-row laptop:justify-between flex-wrap">
+          <div className="flex flex-col items-start laptop:items-center  laptop:flex-row laptop:justify-between flex-wrap">
             {/* logo */}
             <div>
               <img src={logo} alt="Logo" />
@@ -33,7 +33,7 @@ const Footer = () => (
                     to="/about"
                     className={`${
                       isActive("/about") ? "text-[#8F969D]" : "text-white"
-                    } hover:text-[#8F969D] transition-transform duration-500`}
+                    } hover:text-[#8F969D]  duration-500`}
                   >
                     About
                   </Link>
@@ -43,19 +43,20 @@ const Footer = () => (
                     to="/services"
                     className={`${
                       isActive("/services") ? "text-[#8F969D]" : "text-white"
-                    } hover:text-[#8F969D] transition-transform duration-500`}
+                    } hover:text-[#8F969D]  duration-500`}
                   >
                     Services
                   </Link>
                 </li>
+
                 <li onClick={handleLinkClick}>
                   <Link
-                    to="/caseStudy/1"
+                    to="/project"
                     className={`${
-                      isActive("/caseStudy/1") ? "text-[#8F969D]" : "text-white"
-                    } hover:text-[#8F969D] transition-transform duration-500`}
+                      isActive("/project") ? "text-[#8F969D]" : "text-white"
+                    } hover:text-[#8F969D]  duration-500`}
                   >
-                    Cases
+                    Project
                   </Link>
                 </li>
                 <li onClick={handleLinkClick}>
@@ -63,19 +64,9 @@ const Footer = () => (
                     to="/Career"
                     className={`${
                       isActive("/Career") ? "text-[#8F969D]" : "text-white"
-                    } hover:text-[#8F969D] transition-transform duration-500`}
+                    } hover:text-[#8F969D]  duration-500`}
                   >
                     Career
-                  </Link>
-                </li>
-                <li onClick={handleLinkClick}>
-                  <Link
-                    to="/project"
-                    className={`${
-                      isActive("/project") ? "text-[#8F969D]" : "text-white"
-                    } hover:text-[#8F969D] transition-transform duration-500`}
-                  >
-                    Project
                   </Link>
                 </li>
               </ul>
@@ -88,20 +79,31 @@ const Footer = () => (
           {/* copy right and privacy policy */}
           <div className="flex flex-col laptop:flex-row flex-wrap justify-center laptop:justify-between items-center pb-[32px]">
             <div>
-              <p className="text-[16px] tab:text-[24px] text-[#666666] font-light">
+              <p className="text-[16px] tab:text-[24px] text-[#666666] hover:text-white duration-300 font-light">
                 All rights reserved Bluetelecast 2024
               </p>
             </div>
             <div className="flex gap-[32px]">
               <Link
                 to="/terms-and-conditions"
-                className="text-[16px] tab:text-[20px] text-[#666666] font-light"
+                className={`${
+                  isActive("/terms-and-conditions")
+                    ? "text-white"
+                    : "text-[#666666]"
+                } hover:text-white duration-300 text-[16px] tab:text-[20px] font-light`}
                 onClick={handleLinkClick}
               >
                 Terms and Condition
               </Link>
               <Link to="/privacy-and-policy" onClick={handleLinkClick}>
-                <p className="text-[16px] tab:text-[20px] text-[#666666] font-light">
+                <p
+                  className={`${
+                    isActive("/privacy-and-policy")
+                      ? "text-white"
+                      : "text-[#666666]"
+                  } hover:text-white duration-300 text-[16px] tab:text-[20px] font-light`}
+                  onClick={handleLinkClick}
+                >
                   Privacy Policy
                 </p>
               </Link>

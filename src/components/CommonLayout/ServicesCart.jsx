@@ -1,9 +1,9 @@
 const ServicesCart = ({ title, description, src }) => (
   // Main Div
-  <div className="flex  flex-col gap-[40px]">
+  <div className="flex flex-col gap-[40px]">
     {/* Image */}
-    <div className="max-w-[859px]">
-      <img src={src} />
+    <div className="max-w-[859px] overflow-hidden rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+      <img src={src} alt={title} className="w-full h-auto" />
     </div>
 
     {/* Description */}
@@ -15,7 +15,7 @@ const ServicesCart = ({ title, description, src }) => (
         </h6>
       </div>
       {/* 2nd part */}
-      <div className="text-center ">
+      <div className="text-center">
         <p className="text-[#00040D] text-2xl leading-8 max-w-[600px] text-start">
           {description}
         </p>

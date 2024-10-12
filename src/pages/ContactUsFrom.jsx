@@ -48,16 +48,43 @@ const ContactUsForm = () => {
   // Form validation function
   const validate = () => {
     let newErrors = {};
-    if (!formData.fullName) newErrors.fullName = "Full name is required";
-    if (!formData.companyName)
-      newErrors.companyName = "Company name is required";
-    if (!formData.email) newErrors.email = "Email is required";
-    if (!formData.phoneNumber)
-      newErrors.phoneNumber = "Phone number is required";
-    if (!formData.projectDetails)
-      newErrors.projectDetails = "Project details are required";
-    if (selectedServices.length === 0)
-      newErrors.services = "Please select at least one service";
+
+    // Check if fullName is filled; if not, prevent filling other fields
+    if (!formData.fullName) {
+      newErrors.fullName = "Full name is required";
+      newErrors.global = "Please fill out the full name first"; // Global message
+    } else {
+      // Proceed with the rest of the validations
+      if (!formData.companyName) {
+        newErrors.companyName = "Company name is required"; // Validate company name
+      } else {
+        // Validate Company Name - Allow only letters, numbers, and some special characters
+        const companyNamePattern = /^[A-Za-z0-9\s.,'-]*$/; // Adjust regex as needed
+        if (!companyNamePattern.test(formData.companyName)) {
+          newErrors.companyName = "Company name contains invalid characters";
+        }
+      }
+
+      if (!formData.email) newErrors.email = "Email is required";
+      if (!formData.phoneNumber)
+        newErrors.phoneNumber = "Phone number is required";
+      if (!formData.projectDetails)
+        newErrors.projectDetails = "Project details are required";
+      if (selectedServices.length === 0)
+        newErrors.services = "Please select at least one service";
+
+      // Email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (formData.email && !emailPattern.test(formData.email)) {
+        newErrors.email = "Please enter a valid email address";
+      }
+
+      // Phone number validation (10 digits)
+      const phonePattern = /^\d{10}$/;
+      if (formData.phoneNumber && !phonePattern.test(formData.phoneNumber)) {
+        newErrors.phoneNumber = "Please enter a valid phone number (10 digits)";
+      }
+    }
 
     return newErrors;
   };
@@ -125,7 +152,7 @@ const ContactUsForm = () => {
               )}
             </div>
 
-            {/* form section */}
+            {/* Form section */}
             <div className="pt-[40px] px-[20px] laptop:px-0">
               <form onSubmit={handleSubmit}>
                 {/* Main Div */}
@@ -177,12 +204,12 @@ const ContactUsForm = () => {
                       <p className="text-red-500">{errors.phoneNumber}</p>
                     )}
                     <input
-                      type="number"
+                      type="text" // Changed to 'text' for better handling of phone input
                       name="phoneNumber"
                       value={formData.phoneNumber}
                       onChange={handleChange}
-                      placeholder="Phone Number"
-                      className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px]  px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA]"
+                      placeholder="Phone Number (10 digits)"
+                      className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px] px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA]"
                     />
                     {errors.projectDetails && (
                       <p className="text-red-500">{errors.projectDetails}</p>
@@ -192,12 +219,13 @@ const ContactUsForm = () => {
                       name="projectDetails"
                       value={formData.projectDetails}
                       onChange={handleChange}
-                      placeholder="Project details"
+                      placeholder="Project Details"
+                      rows="4"
                       className="bg-[#E8F0F980] text-[#8F969D] text-lg rounded-[14px] px-10 laptop:px-[20px] py-[14px] outline-[#7DC5FA]"
                     />
                   </div>
-                  {/* Submit Section */}
-                  <div className=" flex justify-between flex-col laptop:flex-row pt-[30px]  items-center laptop:items-start gap-5">
+                  {/* Hate Contact Forms */}
+                  <div className="flex justify-between flex-col laptop:flex-row pt-[30px] items-center laptop:items-start gap-5">
                     {/* Hate Contact Forms? */}
                     <div className="order-2 laptop:order-1">
                       <p className="text-lg text-[#8F969D]">
@@ -211,7 +239,7 @@ const ContactUsForm = () => {
                     <div className="flex order-1 laptop:order-2">
                       <Button
                         type="submit"
-                        className="text-[#191C23] rounded-[34px] text-2xl px-[32px] py-[15px] border border-[#191C23]"
+                        className="text-[#191C23] rounded-[34px] text-2xl px-[32px] py-[15px] border border-[#191C23] hover:bg-[#191C23] hover:text-white duration-300"
                       >
                         Submit
                       </Button>

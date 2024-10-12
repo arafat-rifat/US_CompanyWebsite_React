@@ -27,6 +27,9 @@ const MobileMenu = ({ isShow, handleOpen }) => (
           <Link to="/About">About</Link>
         </li>
         <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
+          <Link to="/services">Services</Link>
+        </li>
+        <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">
           <Link to="/Career">Career</Link>
         </li>
         <li className="hover:border hover:border-[#A7A8AA4D] hover:px-[100px] hover:py-[14px] rounded-3xl">

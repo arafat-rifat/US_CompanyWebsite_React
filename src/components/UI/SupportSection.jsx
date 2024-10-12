@@ -10,7 +10,7 @@ const SupportSection = () => (
       <Container>
         <div className="grid grid-cols-1 px-[20px] desktop:px-0 laptop:grid-cols-3 gap-4 pt-0 laptop:pt-[70px] pb-16">
           {/* 1st */}
-          <div className="rounded-[32px] bg-[#FFFFFF]">
+          <div className="rounded-[32px] bg-[#FFFFFF] shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl">
             <div className="px-[40px] py-[38px]">
               {/* number */}
               <div className="flex justify-center items-center px-2 py-2 rounded-full border w-[78px] h-[78px]">
@@ -31,7 +31,7 @@ const SupportSection = () => (
           </div>
 
           {/* 2nd */}
-          <div className="rounded-[32px] bg-[#FFFFFF]">
+          <div className="rounded-[32px] bg-[#FFFFFF] shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl">
             <div className="px-[40px] py-[38px]">
               {/* Details */}
               <div>
@@ -55,7 +55,7 @@ const SupportSection = () => (
           </div>
 
           {/* 3rd */}
-          <div className="rounded-[32px] bg-[#FFFFFF]">
+          <div className="rounded-[32px] bg-[#FFFFFF] shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl">
             <div className="px-[40px] py-[38px]">
               {/* number */}
               <div className="flex justify-end">
